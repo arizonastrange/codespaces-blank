@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('postagrms', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('author');
+            $table->string('author')->unique;
             $table->string('subtitle');
             $table->date('date');
             $table->text('post');

@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostagrmRequest;
-use App\Http\Requests\UpdatePostagrmRequest;
-use App\Models\Postagrm;
+use App\Http\Requests\StorePostagemRequest;
+use App\Http\Requests\UpdatePostagemRequest;
+use App\Models\Postagem;
 
-class PostagrmController extends Controller
+class PostagemController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $produtos = Products::paginate(25);
+        return view('admin.produtos.index', compact('produtos'));
     }
 
     /**
@@ -21,21 +22,21 @@ class PostagrmController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostagrmRequest $request)
+    public function store(StorePostagemRequest $request)
     {
-        //
+       
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Postagrm $postagrm)
+    public function show(Postagem $postagem)
     {
         //
     }
@@ -43,24 +44,24 @@ class PostagrmController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Postagrm $postagrm)
+    public function edit(Postagem $postagem)
     {
-        //
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostagrmRequest $request, Postagrm $postagrm)
+    public function update(UpdatePostagrmRequest $request, Postagem $postagem)
     {
-        //
+     
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Postagrm $postagrm)
+    public function destroy(Postagem $postagem)
     {
-        //
+       
     }
 }
